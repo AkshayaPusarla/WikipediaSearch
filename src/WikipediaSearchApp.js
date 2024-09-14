@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './style.css'; // Import the CSS file
+import './style.css';
 
 const WikipediaSearchApp = () => {
   const [searchInput, setSearchInput] = useState('');
@@ -11,7 +11,7 @@ const WikipediaSearchApp = () => {
 
   // Fetch the JSON data from the provided URL
   useEffect(() => {
-    fetch('https://dpaste.com/79QXDY8TD.txt')
+    fetch('https://dpaste.com/79QXDY8TD.txt') 
       .then(response => response.json())
       .then(data => {
         setCountryData(data); // Store the JSON data in the state
@@ -37,7 +37,7 @@ const WikipediaSearchApp = () => {
     }
   };
 
-  // Handle search action (when pressing enter or selecting a suggestion)
+  // Handle search action by adding suggestions
   const handleSearch = () => {
     if (searchInput.trim() === '') return;
 
@@ -62,7 +62,7 @@ const WikipediaSearchApp = () => {
     handleSearch(); // Trigger search
   };
 
-  // Handle keyup for enter key to trigger search
+  // Handling Event listeners
   const handleKeyUp = (e) => {
     if (e.key === 'Enter') {
       handleSearch();
